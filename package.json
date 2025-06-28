@@ -8,6 +8,7 @@
     "dev:server": "cross-env NODE_ENV=development tsx server/index.ts",
     "build": "vite build",
     "preview": "vite preview --port 3000",
+    "start": "npm run preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "check": "tsc --noEmit",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
