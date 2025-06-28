@@ -52,32 +52,6 @@ export default function Benefits() {
   return (
     <section id="beneficios" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <p className="text-gray-600 text-sm font-medium mb-8">
-            EMPRESAS QUE JÁ CONFIAM EM NOSSA SOLUÇÃO
-          </p>
-          
-          {/* Client Logos */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-60 mb-16">
-            {/* Tech Companies */}
-            <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-              <span className="text-gray-600 font-bold text-sm">TechCorp</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-              <span className="text-gray-600 font-bold text-sm">E-Shop</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-              <span className="text-gray-600 font-bold text-sm">HealthCare+</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-              <span className="text-gray-600 font-bold text-sm">EduPro</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-              <span className="text-gray-600 font-bold text-sm">FinanceMax</span>
-            </div>
-          </div>
-        </div>
-        
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Por que escolher nossos <span className="gradient-text">Chatbots IA</span>?
