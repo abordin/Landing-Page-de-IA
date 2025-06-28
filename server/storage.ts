@@ -42,7 +42,8 @@ export class MemStorage implements IStorage {
   async createLead(insertLead: InsertLead): Promise<Lead> {
     const id = this.currentLeadId++;
     const lead: Lead = { 
-      ...insertLead, 
+      ...insertLead,
+      segmento: insertLead.segmento || null,
       id, 
       createdAt: new Date() 
     };

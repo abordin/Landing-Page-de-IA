@@ -3,18 +3,23 @@ import { Settings, Link2, Rocket, Check } from "lucide-react";
 const steps = [
   {
     icon: Settings,
-    title: "Configuração Personalizada",
-    description: "Analisamos seu negócio e configuramos a IA com conhecimento específico da sua empresa, produtos e processos."
+    title: "Contate a Gente",
+    description: "Entre em contato conosco e conte sobre seu negócio, desafios atuais e objetivos de atendimento."
+  },
+  {
+    icon: Check,
+    title: "Verificamos Quais Agentes Implementar",
+    description: "Analisamos sua operação e identificamos quais funcionários IA serão mais eficazes para seu caso específico."
   },
   {
     icon: Link2,
-    title: "Integração Completa",
-    description: "Conectamos com Chatwoot, WhatsApp Business, Instagram e todos os canais onde seus clientes estão."
+    title: "Planejamos Cada Passo",
+    description: "Criamos um plano detalhado de implementação, integrações necessárias e cronograma de ativação."
   },
   {
     icon: Rocket,
-    title: "Ativação Imediata",
-    description: "Em poucos dias, seu chatbot está funcionando perfeitamente, atendendo clientes e gerando resultados."
+    title: "Lidamos com a Parte Técnica",
+    description: "Sua equipe foca no que importa enquanto cuidamos de toda implementação, testes e configurações técnicas."
   }
 ];
 
@@ -33,11 +38,11 @@ export default function HowItWorks() {
             Como <span className="gradient-text">Funciona</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Implementação simples e resultados imediatos em apenas 3 passos
+            Processo simples e sem complicações em 4 passos. Você foca no seu negócio, nós cuidamos da tecnologia
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-12 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (

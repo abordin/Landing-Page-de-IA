@@ -1,12 +1,17 @@
 import Hero from "@/components/sections/hero";
+import SocialProof from "@/components/sections/social-proof";
+import AITeam from "@/components/sections/ai-team";
 import Benefits from "@/components/sections/benefits";
+import Multichannel from "@/components/sections/multichannel";
+import ChatwootIntegration from "@/components/sections/chatwoot-integration";
 import HowItWorks from "@/components/sections/how-it-works";
 import UseCases from "@/components/sections/use-cases";
-import Statistics from "@/components/sections/statistics";
-import Testimonials from "@/components/sections/testimonials";
+import Guarantee from "@/components/sections/guarantee";
+import FAQ from "@/components/sections/faq";
 import CTA from "@/components/sections/cta";
 import Footer from "@/components/sections/footer";
 import FloatingWhatsApp from "@/components/ui/floating-whatsapp";
+import UrgencyBanner from "@/components/sections/urgency-banner";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -37,12 +42,17 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen">
+        <UrgencyBanner />
         <Hero />
+        <SocialProof />
+        <AITeam />
         <Benefits />
+        <Multichannel />
+        <ChatwootIntegration />
         <HowItWorks />
         <UseCases />
-        <Statistics />
-        <Testimonials />
+        <Guarantee />
+        <FAQ />
         <CTA />
         <Footer />
         <FloatingWhatsApp />
