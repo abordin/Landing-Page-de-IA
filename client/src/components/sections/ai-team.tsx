@@ -153,7 +153,15 @@ export default function AITeam() {
                 </div>
                 
                 {/* Hire Button */}
-                <button className="w-full mt-4 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                <button 
+                  onClick={() => {
+                    const formElement = document.getElementById('form');
+                    if (formElement) {
+                      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                  }}
+                  className="w-full mt-4 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors text-sm hover:bg-blue-100 hover:text-blue-700"
+                >
                   Contratar {employee.name.split(' ')[0]}
                 </button>
               </div>
