@@ -2,31 +2,7 @@ export default function SocialProof() {
   return (
     <section className="py-12 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <p className="text-gray-600 text-sm font-medium">
-            EMPRESAS QUE JÁ CONFIAM EM NOSSA SOLUÇÃO
-          </p>
-        </div>
-        
-        {/* Client Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-60">
-          {/* Tech Companies */}
-          <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-            <span className="text-gray-600 font-bold text-sm">TechCorp</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-            <span className="text-gray-600 font-bold text-sm">E-Shop</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-            <span className="text-gray-600 font-bold text-sm">HealthCare+</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-            <span className="text-gray-600 font-bold text-sm">EduPro</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 w-24 h-16 flex items-center justify-center">
-            <span className="text-gray-600 font-bold text-sm">FinanceMax</span>
-          </div>
-        </div>
+
         
         {/* Trust Badges */}
         <div className="flex justify-center items-center space-x-8 mt-8">
