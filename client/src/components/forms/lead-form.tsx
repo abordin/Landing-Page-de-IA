@@ -1,17 +1,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { insertLeadSchema, type InsertLead } from "@shared/lead-schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { Rocket } from "lucide-react";
+import { useState } from "react";
 
 export default function LeadForm() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<InsertLead>({
     resolver: zodResolver(insertLeadSchema),
@@ -24,41 +24,38 @@ export default function LeadForm() {
     },
   });
 
-  const createLeadMutation = useMutation({
-    mutationFn: async (lead: InsertLead) => {
-      const response = await apiRequest("POST", "/api/leads", lead);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      if (data.success) {
-        toast({
-          title: "Sucesso!",
-          description: "Obrigado! Em breve entraremos em contato para agendar sua demonstração gratuita.",
-        });
-        
-        form.reset();
-        
-        // Optional: Send to WhatsApp
-        const { nome, empresa } = data.lead;
-        const whatsappMessage = `Olá! Sou ${nome} da empresa ${empresa}. Gostaria de saber mais sobre os chatbots de IA e agendar uma demonstração.`;
-        const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        setTimeout(() => {
-          window.open(whatsappUrl, '_blank');
-        }, 1000);
-      }
-    },
-    onError: (error) => {
+  const onSubmit = async (data: InsertLead) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Simular envio do formulário
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Sucesso!",
+        description: "Obrigado! Em breve entraremos em contato para agendar sua demonstração gratuita.",
+      });
+      
+      form.reset();
+      
+      // Optional: Send to WhatsApp
+      const { nome, empresa } = data;
+      const whatsappMessage = `Olá! Sou ${nome} da empresa ${empresa}. Gostaria de saber mais sobre os chatbots de IA e agendar uma demonstração.`;
+      const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`;
+      
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 1000);
+      
+    } catch (error) {
       toast({
         title: "Erro",
         description: "Ocorreu um erro ao enviar seus dados. Tente novamente.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: InsertLead) => {
-    createLeadMutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatPhone = (value: string) => {
@@ -161,10 +158,10 @@ export default function LeadForm() {
         <Button 
           type="submit" 
           className="w-full hero-gradient text-white font-bold py-4 px-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105"
-          disabled={createLeadMutation.isPending}
+          disabled={isSubmitting}
         >
           <Rocket className="mr-2 h-4 w-4" />
-          {createLeadMutation.isPending ? "Enviando..." : "Quero uma Demonstração Gratuita"}
+          {isSubmitting ? "Enviando..." : "Quero uma Demonstração Gratuita"}
         </Button>
         
         <p className="text-xs text-gray-500 text-center">
